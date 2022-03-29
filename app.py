@@ -5,7 +5,7 @@ import logging
 
 from flask import Flask, request, make_response
 from weasyprint import HTML
-from weasyprint.fonts import FontConfiguration
+from weasyprint.text.fonts import FontConfiguration
 from fonts import css_for_extra_fonts
 
 app = Flask('pdf')

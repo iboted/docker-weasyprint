@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM python:3.9-alpine
 #FROM python:3.6-stretch
 
 #RUN echo "deb http://ftp.debian.org/debian stretch main contrib" > /etc/apt/sources.list
@@ -23,7 +23,7 @@ FROM ubuntu:18.04
 #                        libpangocairo-1.0-0 \
 #    && apt-get -y clean
 
-RUN apt-get -y update && apt-get install -y build-essential python3-dev python3-pip python3-setuptools python3-wheel python3-cffi libcairo2 libpango-1.0-0 libpangocairo-1.0-0 libgdk-pixbuf2.0-0 libffi-dev shared-mime-info libjpeg-dev zlib1g-dev
+RUN apk add py3-pip py3-pillow py3-jinja2 py3-cffi py3-brotli gcc musl-dev python3-dev pango g++ libffi-dev zlib-dev jpeg-dev openjpeg-dev freetype-dev
 
 ADD fonts /usr/share/fonts
 ADD requirements.txt /app/requirements.txt
